@@ -3,14 +3,14 @@
         "url": "02 - data.json"
     },
     "mark": {
-      "type": "point",
-      "size": 100
+        "type": "point",
+        "size": 100
     },
     "encoding": {
-      "y": {
-        "field": "city",
-        "type": "nominal"
-      }
+        "y": {
+            "field": "city",
+            "type": "nominal"
+        }
     },
     "width": 400,
     "height": 150

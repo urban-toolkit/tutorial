@@ -1,18 +1,17 @@
 {
     "data": {
-        "url": "02 - data.json"
+        "url": "04 - data.json"
     },
     "mark": {
-        "type": "point",
-        "size": 100
+        "type": "point"
     },
     "encoding": {
         "x": {
-            "field": "precip",
+            "field": "fertility",
             "type": "quantitative"
         },
         "y": {
-            "field": "city",
+            "field": "cluster",
             "type": "nominal"
         }
     },

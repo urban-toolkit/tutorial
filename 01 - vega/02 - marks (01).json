@@ -3,9 +3,9 @@
         "url": "02 - data.json"
     },
     "mark": {
-      "type": "point",
-      "size": 100
+        "type": "point",
+        "size": 100
     },
     "width": 400,
     "height": 150
-  }
+}
