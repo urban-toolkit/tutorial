@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Grammars for Vis Tutorial: SIBGRAPI 2023</title>
+    <meta charset="utf-8" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vega"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed"></script>
+
+    <style>
+        #vis {
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Grammars for Vis Tutorial: SIBGRAPI 2023</h1>
+    <div id="vis"></div>
+
+    <script>
+        const ex = 9;
+
+        let url = ""
+        switch (ex) {
+            case 1:
+                url = "01 - hello.json"
+                break;
+            case 2:
+                url = "02 - marks (01).json"
+                break;
+            case 3:
+                url = "02 - marks (02).json"
+                break;
+            case 4:
+                url = "02 - marks (03).json"
+                break;
+            case 5:
+                url = "02 - marks (04).json"
+                break;
+            case 6:
+                url = "02 - marks (05).json"
+                break;
+            case 7:
+                url = "03 - multiview (01).json"
+                break;
+                case 8:
+                url = "03 - multiview (02).json"
+                break;
+            case 9:
+                url = "03 - multiview (03).json"
+                break;
+            }
+
+        fetch(url)
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#vis', out);
+            })
+            .catch(err => { throw err });
+
+    </script>
+</body>
+
+</html>
