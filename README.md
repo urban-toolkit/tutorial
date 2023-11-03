@@ -10,10 +10,10 @@ The first part of the tutorial presents an overview of the foundations of gramma
 
 ![Vega-Lite](vega-lite.png)
 
-The second part of the tutorial presents an overview of the subsequent works on grammars for authoring visualizations, with a more in-depth (and practical) look at [Vega-Lite](https://vega.github.io/vega-lite/), given its widespread adoption across visualization systems. The slides can be found [here](./01 - vega/vega.pdf) and the examples [here](./01 - vega/).
+The second part of the tutorial presents an overview of the subsequent works on grammars for authoring visualizations, with a more in-depth (and practical) look at [Vega-Lite](https://vega.github.io/vega-lite/), given its widespread adoption across visualization systems. The slides can be found [here](01-vega/vega.pdf) and the examples [here](01-vega/).
 
 ## Part 3: The Urban Toolkit
 
 ![The Urban Toolkit](utk.png)
 
-The third part of the tutorial presents our perspectives on the design of a domain-specific grammar used by [the Urban Toolkit](http://urbantk.org). The slides can be found [here](./02 - utk/utk.pdf) and the examples [here](./02 - utk/).
+The third part of the tutorial presents our perspectives on the design of a domain-specific grammar used by [the Urban Toolkit](http://urbantk.org). The slides can be found [here](02-utk/utk.pdf) and the examples [here](02-utk/).
