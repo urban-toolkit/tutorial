@@ -1,6 +1,6 @@
 {
     "data": {
-        "url": "05 - data.json"
+        "url": "07 - data.json"
     },
     "transform": [
         {
@@ -52,9 +52,6 @@
                 "color": "#ccc"
             },
             "encoding": {
-                "detail": {
-                    "aggregate": "count"
-                },
                 "x": {
                     "field": "key"
                 }
@@ -72,7 +69,7 @@
                     "field": "index"
                 },
                 "opacity": {
-                    "value": 0.3
+                    "value": 0.2
                 },
                 "x": {
                     "type": "nominal",
@@ -105,39 +102,6 @@
                         "text": {
                             "aggregate": "max",
                             "field": "max"
-                        }
-                    }
-                },
-                {
-                    "mark": {
-                        "type": "tick",
-                        "style": "tick",
-                        "size": 8,
-                        "color": "#ccc"
-                    }
-                }
-            ]
-        },
-        {
-            "encoding": {
-                "x": {
-                    "type": "nominal",
-                    "field": "key"
-                },
-                "y": {
-                    "value": 150
-                }
-            },
-            "layer": [
-                {
-                    "mark": {
-                        "type": "text",
-                        "style": "label"
-                    },
-                    "encoding": {
-                        "text": {
-                            "aggregate": "min",
-                            "field": "mid"
                         }
                     }
                 },
