@@ -4,7 +4,7 @@ This repository contains the material for the SIBGRAPI 2023 tutorial on high-lev
 
 ## Part 1: An overview of grammars for visualization
 
-The first part of the tutorial presents an overview of the foundations of grammars of graphics, and how it substantiates the many developments in the visualization field. The slides can be found [here](00 - intro/intro.pdf)
+The first part of the tutorial presents an overview of the foundations of grammars of graphics, and how it substantiates the many developments in the visualization field. The slides can be found [here](00-intro/intro.pdf)
 
 ## Part 2: The Vega-Lite grammar
 
