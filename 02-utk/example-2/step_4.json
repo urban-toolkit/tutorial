@@ -1,0 +1,464 @@
+{
+    "components": [
+      {
+        "map": {
+          "camera": {
+            "position": [
+              -8239611,
+              4941390.5,
+              2.019619873046875
+            ],
+            "direction": {
+              "right": [
+                442.88140869140625,
+                -1476.4549560546875,
+                2019.619873046875
+              ],
+              "lookAt": [
+                460.66815185546875,
+                -850.698974609375,
+                1239.803955078125
+              ],
+              "up": [
+                0.022156884893774986,
+                0.77950119972229,
+                0.6260088086128235
+              ]
+            }
+          },
+          "knots": [
+            "pureWater",
+            "pureParks",
+            "noiseToZip"
+          ],
+          "interactions": [
+            "NONE",
+            "NONE",
+            "PICKING"
+          ]
+        },
+        "plots": [
+          {
+            "plot": {
+              "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+              "width": 600,
+              "height": 300,
+              "title": {
+                "text": "Datasets aggregated by zip code",
+                "fontSize": 18
+              },
+              "transform": [
+                {
+                  "window": [
+                    {
+                      "op": "count",
+                      "as": "index"
+                    }
+                  ]
+                },
+                {
+                  "fold": [
+                    "taxiPickupToZip_abstract",
+                    "noiseToZip_abstract",
+                    "crimeToZip_abstract",
+                    "restaurantsToZip_abstract",
+                    "subwayToZip_abstract",
+                    "schoolToZip_abstract",
+                    "skyToZip_abstract",
+                    "parksToZip_abstract"
+                  ]
+                },
+                {
+                  "joinaggregate": [
+                    {
+                      "op": "min",
+                      "field": "value",
+                      "as": "min"
+                    },
+                    {
+                      "op": "max",
+                      "field": "value",
+                      "as": "max"
+                    }
+                  ],
+                  "groupby": [
+                    "key"
+                  ]
+                },
+                {
+                  "calculate": "(datum.value - datum.min) / (datum.max-datum.min)",
+                  "as": "norm_val"
+                },
+                {
+                  "calculate": "(datum.min + datum.max) / 2",
+                  "as": "mid"
+                }
+              ],
+              "layer": [
+                {
+                  "mark": {
+                    "type": "rule",
+                    "color": "#ccc"
+                  },
+                  "encoding": {
+                    "detail": {
+                      "aggregate": "count"
+                    },
+                    "x": {
+                      "field": "key"
+                    }
+                  }
+                },
+                {
+                  "mark": "line",
+                  "encoding": {
+                    "detail": {
+                      "type": "nominal",
+                      "field": "index"
+                    },
+                    "opacity": {
+                      "value": 0.8
+                    },
+                    "x": {
+                      "type": "nominal",
+                      "field": "key"
+                    },
+                    "y": {
+                      "type": "quantitative",
+                      "field": "norm_val",
+                      "axis": null
+                    },
+                    "stroke": {
+                      "condition": [
+                        {
+                          "test": "datum['taxiPickupToZip_highlight'] == true",
+                          "value": "#4a97ed"
+                        }
+                      ],
+                      "value": "grey"
+                    }
+                  }
+                },
+                {
+                  "encoding": {
+                    "x": {
+                      "type": "nominal",
+                      "field": "key"
+                    },
+                    "y": {
+                      "value": 0
+                    }
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "text",
+                        "style": "label"
+                      },
+                      "encoding": {
+                        "text": {
+                          "aggregate": "max",
+                          "field": "max"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "tick",
+                        "style": "tick",
+                        "size": 8,
+                        "color": "#ccc"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "encoding": {
+                    "x": {
+                      "type": "nominal",
+                      "field": "key"
+                    },
+                    "y": {
+                      "value": 150
+                    }
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "text",
+                        "style": "label"
+                      },
+                      "encoding": {
+                        "text": {
+                          "aggregate": "min",
+                          "field": "mid"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "tick",
+                        "style": "tick",
+                        "size": 8,
+                        "color": "#ccc"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "encoding": {
+                    "x": {
+                      "type": "nominal",
+                      "field": "key"
+                    },
+                    "y": {
+                      "value": 300
+                    }
+                  },
+                  "layer": [
+                    {
+                      "mark": {
+                        "type": "text",
+                        "style": "label"
+                      },
+                      "encoding": {
+                        "text": {
+                          "aggregate": "min",
+                          "field": "min"
+                        }
+                      }
+                    },
+                    {
+                      "mark": {
+                        "type": "tick",
+                        "style": "tick",
+                        "size": 2,
+                        "color": "#ccc"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "config": {
+                "axisX": {
+                  "domain": false,
+                  "labelAngle": 0,
+                  "tickColor": "#ccc",
+                  "title": null,
+                  "labelFontSize": 6
+                },
+                "view": {
+                  "stroke": null
+                },
+                "style": {
+                  "label": {
+                    "baseline": "middle",
+                    "align": "right",
+                    "dx": -5
+                  },
+                  "tick": {
+                    "orient": "horizontal"
+                  }
+                }
+              }
+            },
+            "knots": [
+              "taxiPickupToZip",
+              "noiseToZip",
+              "crimeToZip",
+              "restaurantsToZip",
+              "subwayToZip",
+              "schoolToZip",
+              "skyToZip",
+              "parksToZip"
+            ],
+            "arrangement": "LINKED",
+            "interaction": "HOVER"
+          }
+        ],
+        "knots": [
+          {
+            "id": "pureWater",
+            "integration_scheme": [
+              {
+                "out": {
+                  "name": "water",
+                  "level": "OBJECTS"
+                }
+              }
+            ]
+          },
+          {
+            "id": "pureParks",
+            "integration_scheme": [
+              {
+                "out": {
+                  "name": "parks",
+                  "level": "OBJECTS"
+                }
+              }
+            ]
+          },
+          {
+            "id": "noiseToZip",
+            "integration_scheme": [
+              {
+                "spatial_relation": "CONTAINS",
+                "in": {
+                  "name": "noise",
+                  "level": "COORDINATES"
+                },
+                "out": {
+                  "name": "zip",
+                  "level": "OBJECTS"
+                },
+                "operation": "COUNT",
+                "abstract": true
+              }
+            ]
+          },
+          {
+            "id": "taxiPickupToZip",
+            "integration_scheme": [
+              {
+                "spatial_relation": "CONTAINS",
+                "in": {
+                  "name": "taxi_pickup",
+                  "level": "COORDINATES"
+                },
+                "out": {
+                  "name": "zip",
+                  "level": "OBJECTS"
+                },
+                "operation": "COUNT",
+                "abstract": true
+              }
+            ]
+          },
+          {
+            "id": "crimeToZip",
+            "integration_scheme": [
+              {
+                "spatial_relation": "CONTAINS",
+                "in": {
+                  "name": "crime",
+                  "level": "COORDINATES"
+                },
+                "out": {
+                  "name": "zip",
+                  "level": "OBJECTS"
+                },
+                "operation": "COUNT",
+                "abstract": true
+              }
+            ]
+          },
+          {
+            "id": "restaurantsToZip",
+            "integration_scheme": [
+              {
+                "spatial_relation": "CONTAINS",
+                "in": {
+                  "name": "restaurants",
+                  "level": "COORDINATES"
+                },
+                "out": {
+                  "name": "zip",
+                  "level": "OBJECTS"
+                },
+                "operation": "COUNT",
+                "abstract": true
+              }
+            ]
+          },
+          {
+            "id": "subwayToZip",
+            "integration_scheme": [
+              {
+                "spatial_relation": "CONTAINS",
+                "in": {
+                  "name": "subway",
+                  "level": "COORDINATES"
+                },
+                "out": {
+                  "name": "zip",
+                  "level": "OBJECTS"
+                },
+                "operation": "COUNT",
+                "abstract": true
+              }
+            ]
+          },
+          {
+            "id": "schoolToZip",
+            "integration_scheme": [
+              {
+                "spatial_relation": "CONTAINS",
+                "in": {
+                  "name": "school",
+                  "level": "COORDINATES"
+                },
+                "out": {
+                  "name": "zip",
+                  "level": "OBJECTS"
+                },
+                "operation": "COUNT",
+                "abstract": true
+              }
+            ]
+          },
+          {
+            "id": "skyToZip",
+            "integration_scheme": [
+              {
+                "spatial_relation": "CONTAINS",
+                "in": {
+                  "name": "sky",
+                  "level": "COORDINATES"
+                },
+                "out": {
+                  "name": "zip",
+                  "level": "OBJECTS"
+                },
+                "operation": "AVG",
+                "abstract": true
+              }
+            ]
+          },
+          {
+            "id": "parksToZip",
+            "integration_scheme": [
+              {
+                "spatial_relation": "CONTAINS",
+                "in": {
+                  "name": "parks_abstract",
+                  "level": "COORDINATES"
+                },
+                "out": {
+                  "name": "zip",
+                  "level": "OBJECTS"
+                },
+                "operation": "COUNT",
+                "abstract": true
+              }
+            ]
+          }
+        ],
+        "position": {
+          "width": [
+            1,
+            12
+          ],
+          "height": [
+            1,
+            4
+          ]
+        }
+      }
+    ],
+    "arrangement": "LINKED",
+    "grid": {
+      "width": 12,
+      "height": 4
+    }
+  }

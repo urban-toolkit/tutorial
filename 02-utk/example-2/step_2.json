@@ -1,0 +1,110 @@
+{
+    "components": [
+      {
+        "map": {
+          "camera": {
+            "position": [
+              -8239611,
+              4941390.5,
+              2.019619873046875
+            ],
+            "direction": {
+              "right": [
+                442.88140869140625,
+                -1476.4549560546875,
+                2019.619873046875
+              ],
+              "lookAt": [
+                460.66815185546875,
+                -850.698974609375,
+                1239.803955078125
+              ],
+              "up": [
+                0.022156884893774986,
+                0.77950119972229,
+                0.6260088086128235
+              ]
+            }
+          },
+          "knots": [
+            "pureWater",
+            "pureParks",
+            "taxiPickupToZip"
+          ],
+          "interactions": [
+            "NONE",
+            "NONE",
+            "PICKING"
+          ]
+        },
+        "plots": [],
+        "knots": [
+          {
+            "id": "pureWater",
+            "integration_scheme": [
+              {
+                "out": {
+                  "name": "water",
+                  "level": "OBJECTS"
+                }
+              }
+            ]
+          },
+          {
+            "id": "pureParks",
+            "integration_scheme": [
+              {
+                "out": {
+                  "name": "parks",
+                  "level": "OBJECTS"
+                }
+              }
+            ]
+          },
+          {
+            "id": "taxiPickupToZip",
+            "integration_scheme": [
+              {
+                "spatial_relation": "CONTAINS",
+                "in": {
+                  "name": "taxi_pickup",
+                  "level": "COORDINATES"
+                },
+                "out": {
+                  "name": "zip",
+                  "level": "OBJECTS"
+                },
+                "operation": "COUNT",
+                "abstract": true
+              }
+            ]
+          }
+        ],
+        "position": {
+          "width": [
+            6,
+            12
+          ],
+          "height": [
+            1,
+            4
+          ]
+        }
+      }
+    ],
+    "arrangement": "LINKED",
+    "grid": {
+      "width": 12,
+      "height": 4
+    },
+    "grammar_position": {
+      "width": [
+        1,
+        5
+      ],
+      "height": [
+        1,
+        4
+      ]
+    }
+  }
