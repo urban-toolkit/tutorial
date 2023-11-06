@@ -30,7 +30,7 @@ Examples: [01-vega](01-vega/)
 The third part of the tutorial presents our perspectives on the design of a domain-specific grammar used by [the Urban Toolkit](http://urbantk.org).
 
 Slides: [utk.pdf](02-utk/utk.pdf)  
-Examples: [02-utk](02-utk/)
+Examples and data: [02-utk](02-utk/)
 
 UTK was first presented in the [IEEE VIS 2023 paper](https://arxiv.org/abs/2308.07769):  
 **The Urban Toolkit: A Grammar-based Framework for Urban Visual Analytics**  
