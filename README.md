@@ -2,6 +2,12 @@
 
 This repository contains the material for the SIBGRAPI 2023 tutorial on high-level grammars for visualization and visual analytics. A detailed description of the tutorial can be found [here](grammars.pdf).
 
+- Gustavo Moreira (UIC) [@gmorei3](https://twitter.com/gmorei3)
+- [Marcos Lage](http://www.ic.uff.br/~mlage/) (UFF) [@_mlage](https://twitter.com/_mlage)
+- [Nivan Ferreira](https://www.cin.ufpe.br/~nivan/) (UFPE) [@NIvanFerreira](https://twitter.com/NIvanFerreira)
+- [Fabio Miranda](https://fmiranda.me) (UIC) [@fabiom_miranda](https://twitter.com/fabiom_miranda/)
+
+
 ## Part 1: An overview of grammars for visualization
 
 The first part of the tutorial presents an overview of the foundations of grammars of graphics, and how it substantiates the many developments in the visualization field. The slides can be found [here](00-intro/intro.pdf)
