@@ -24,7 +24,7 @@ The second part of the tutorial presents an overview of the subsequent works on 
 
 The third part of the tutorial presents our perspectives on the design of a domain-specific grammar used by [the Urban Toolkit](http://urbantk.org). The slides can be found [here](02-utk/utk.pdf) and the examples [here](02-utk/).
 
-UTK was first presented in the [paper](https://arxiv.org/abs/2308.07769):  
+UTK was first presented in the [IEEE VIS 2023 paper](https://arxiv.org/abs/2308.07769):  
 **The Urban Toolkit: A Grammar-based Framework for Urban Visual Analytics**  
 Gustavo Moreira, Maryam Hosseini, Md Nafiul Alam Nipu, Marcos Lage, Nivan Ferreira, Fabio Miranda  
-IEEE Transactions on Visualization and Computer Graphics (Accepted, to appear)
+IEEE Transactions on Visualization and Computer Graphics (Proceedings of IEEE VIS 2023 -- Accepted, to appear)
